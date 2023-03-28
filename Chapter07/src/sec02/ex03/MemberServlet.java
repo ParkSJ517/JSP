@@ -1,4 +1,4 @@
-package sec02.ex02;
+package sec02.ex03;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Servlet implementation class MemberServlet
  */
-@WebServlet("/memberServlet4")
+@WebServlet("/memberServlet5")
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -51,10 +51,14 @@ public class MemberServlet extends HttpServlet {
 			vo.setEmail(_email);
 			dao.addMember(vo);
 		}
+		else if (command != null && command.equals("delMember")) {
+			String id = req.getParameter("id");
+			dao.delMember(id);
+		}
 		List<MemberVO> list = dao.listMembers();
 		out.print("<html><body>");
 		out.print("<table border=1><tr align='center' bgcolor='lightgreen'>");
-		out.print("<td>아이디</td><td>비밀번호</td><td>이름</td><td>이메일</td><td>가입일</td></tr>");
+		out.print("<td>아이디</td><td>비밀번호</td><td>이름</td><td>이메일</td><td>가입일</td><td>삭제</td></tr>");
 		
 		for (int i = 0; i < list.size(); i++) {
 			MemberVO memberVO = (MemberVO) list.get(i);
@@ -65,7 +69,8 @@ public class MemberServlet extends HttpServlet {
 			Date joinDate = memberVO.getJoinDate();
 			out.print("<tr><td>" + id + "</td><td>" 
 			+ pwd + "</td><td>" + name + "</td><td>" 
-			+ email + "</td><td>" + joinDate + "</td></tr>");
+			+ email + "</td><td>" + joinDate + "</td><td>"
+			+ "<a href='/Chapter07/memberServlet5?command=delMember&id=" + id + "'>삭제 </a></td></tr>");
 		}
 		out.print("</table></body></html>");
 		out.print("<a href='/Chapter07/memberForm.html'>새 회원 등록하기</a>");
