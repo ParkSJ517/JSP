@@ -49,4 +49,54 @@
     <servlet-name>GetCookieValue</servlet-name>
     <url-pattern>/get</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionTest1</display-name>
+    <servlet-name>SessionTest1</servlet-name>
+    <servlet-class>sec03.ex01.SessionTest1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTest1</servlet-name>
+    <url-pattern>/session1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionTest2</display-name>
+    <servlet-name>SessionTest2</servlet-name>
+    <servlet-class>sec03.ex01.SessionTest2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTest2</servlet-name>
+    <url-pattern>/session2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionTest3</display-name>
+    <servlet-name>SessionTest3</servlet-name>
+    <servlet-class>sec03.ex01.SessionTest3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTest3</servlet-name>
+    <url-pattern>/session3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet4</display-name>
+    <servlet-name>LoginServlet4</servlet-name>
+    <servlet-class>sec04.ex01.LoginServlet4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet4</servlet-name>
+    <url-pattern>/login4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowMember</display-name>
+    <servlet-name>ShowMember</servlet-name>
+    <servlet-class>sec04.ex01.ShowMember</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowMember</servlet-name>
+    <url-pattern>/show</url-pattern>
+  </servlet-mapping>
 </web-app>
